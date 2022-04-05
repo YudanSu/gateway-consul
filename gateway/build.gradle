@@ -4,6 +4,9 @@ plugins {
 	id 'groovy'
 }
 
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
@@ -20,7 +23,11 @@ dependencies {
 	implementation 'org.codehaus.groovy:groovy'
 	implementation 'org.springframework.cloud:spring-cloud-starter-consul-config'
 	implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+	implementation 'org.springframework.cloud:spring-cloud-starter'
 	implementation 'org.springframework.cloud:spring-cloud-starter-gateway'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-hystrix:1.4.6.RELEASE'
+	implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
+	implementation 'org.springframework.cloud:spring-cloud-starter-circuitbreaker-reactor-resilience4j'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
